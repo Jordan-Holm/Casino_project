@@ -6,7 +6,6 @@ class Mainmenu
 
     def initialize
         @player = create_player
-        @slots = slots
     end
 
     def create_player
@@ -15,7 +14,8 @@ class Mainmenu
         puts "Enter how much money you brought: "
         money = gets.strip.to_i
 
-        @player = Player.new() 
+        @player = Player.new(name, money)
+        menu
     end
 
     def menu
@@ -29,7 +29,7 @@ class Mainmenu
         menu_choice = gets.strip.to_i
         
         if menu_choice == 1
-            @slots = Slotgame.new()
+            @slots = Slotgame.new(@player)
         elsif menu_choice == 2
             Roulette
         elsif menu_choice == 3

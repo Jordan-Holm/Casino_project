@@ -1,9 +1,9 @@
 class Slotgame
-    attr_accessor :person, :menu
+    attr_accessor :player
 
-    def initialize(person, menu)
-        @person = person
-        @menu = menu
+    def initialize(player)
+        @player = player
+        
         roll_or_leave
     end
 
@@ -16,7 +16,7 @@ class Slotgame
         if answer == 1
             place_bet
         elsif answer == 2
-            @menu = Menu.new()
+            #RETURN TO MENU
         else
             puts "invalid entry, please choose 1 or two"
             roll_or_leave
@@ -43,25 +43,22 @@ class Slotgame
         if @roll_one == @roll_two
             if @roll_two == @roll_three
                 # adds bet_amount * 5 into bankroll
-                person.bankroll_adjust(winnings)
+                player.bankroll_adjust(winnings)
                 puts "YOU WIN #{winnings}!"
-                puts "Total: #{person.age}"
+                puts "Total: #{player.money}"
             else
                 # takes bet_amount away from bankroll
-                person.bankroll_adjust(-bet_amount)
+                player.bankroll_adjust(-bet_amount)
                 puts "you lost #{bet_amount}."
-                puts "Total: #{person.age}"
+                puts "Total: #{player.money}"
             end
         else
             # takes bet_amount away from bankroll
+            player.bankroll_adjust(-bet_amount)
             puts "you lost #{bet_amount}."
-            puts "Total: #{person.age}"
+            puts "Total: #{player.money}"
         end
 
         roll_or_leave
-    end
-
-    
+    end 
 end
-
-slot_game = Slotgame.new()
