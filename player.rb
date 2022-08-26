@@ -1,10 +1,13 @@
-class player
-  attr_accessor : name, :money
+class Player
+  attr_accessor :name , :money
+
   def initialize
     puts "What is your name?"
-    @name = gets.strip
-    @money = 500.00
+    @name = name
+    @money = money
   end
 
-
+  def bankroll_adjust(num)
+    @money += num
+  end
 end
