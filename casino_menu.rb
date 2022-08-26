@@ -33,7 +33,9 @@ class Mainmenu
             Roulette
         elsif menu_choice == 3
             Game 3
-        elsif menu_choice == 4
+        elsif menu_choice ==4
+            Game 4
+        elsif menu_choice ==5
             puts "Thank you for playing!"
             exit
         else 
