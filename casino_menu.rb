@@ -20,3 +20,4 @@ def menu
   end
   menu
 end
+menu
