@@ -44,7 +44,7 @@ class Slotgame
             if @roll_two == @roll_three
                 # adds bet_amount * 5 into bankroll
                 player.bankroll_adjust(winnings)
-                puts "YOU WIN #{winnings}!"
+                puts "YOU WON #{winnings}!"
                 puts "Total: #{player.money}"
             else
                 # takes bet_amount away from bankroll
