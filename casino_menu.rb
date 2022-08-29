@@ -20,7 +20,7 @@ class Mainmenu
     end
 
     def menu
-        puts "hello #{player.name}"
+        puts "hello #{player.name}!"
         puts "         ___________
         '._==_==_=_.'
         .-\:      /-.
@@ -41,7 +41,7 @@ class Mainmenu
         if menu_choice == 1
             @slots = Slotgame.new(@player)
         elsif menu_choice == 2
-            @coin_flip
+            @coin_flip = Coingame.new(@player)
         elsif menu_choice == 3
             Game 3
         elsif menu_choice == 4

@@ -1,4 +1,4 @@
-class Coinflip
+class Coingame
   attr_accessor :player
 
   def initialize(player)
@@ -11,11 +11,12 @@ class Coinflip
     puts "Welcome!!! Flip away!"
     puts '1) Flip'
     puts '2) main menu'
-    answer = gets.strip
+    answer = gets.strip.to_i
 
     if answer == 1
       place_bet
     elsif answer == 2
+      puts "..under construction.."
       #find out how to return to main menu
     else
       puts "hmm.. I didn't quite get that. Could you pick again from options 1 or 2?"
@@ -34,26 +35,31 @@ class Coinflip
   def run_game(bet_amount)
     winnings = bet_amount * 6
 
-        # true for heads
- def coinFlip
-  number.times do |flip|
-    x = rand(1..2)
-    x.even? puts "heads" or puts "tails"
+  puts "Choose: 1) Heads  2) Tails"
+  user_input = gets.to_i
+  
+  if rand.round == 0
+    coin = "Heads!"
+  else
+    coin = "tails"
+  end
+
+  if coin.to_s == user_input.to_s
+    player.bankroll_adjust(winnings)
+    puts "And the coin lands on " + coin.upcase + "! YOU WIN!!!"
+    puts "Total: #{player.money}"
+  else
+    player.bankroll_adjust(-bet_amount)
+    puts "And the coin lands on " + coin + "...ouch, I'm not sure if you'll ever financially recover from this."
+    puts "you lost #{bet_amount}."
+    puts "Total: #{player.money}"
+  end
+# This method will iterate over each line individually from the .txt file and print it to the console
+  def render_ascii_art
+  File.readlines("art.txt") do |line|
+    puts line
   end
 end
-
-coinFlip(1)
-
-    if @heads == true
-      player.bankroll_adjust(winnings)
-      puts "IT'S HEADS!! YOU WON #{winnnings}!!"
-      puts "Total: #{player.money}"
-    else
-      # casino takes all your money now
-      player.bankroll_adjust(-bet_amount)
-      puts "it's tails..you lost #{bet_amount}." # add crying ascII art
-      puts "Total: #{player.money}"
-    end
 
     coin_flip
   end
