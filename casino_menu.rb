@@ -5,8 +5,10 @@ require_relative 'coin_flip'
 class Mainmenu
     attr_accessor :player
 
-    def initialize
+    def initialize()
         @player = create_player
+        
+        menu()
     end
 
     def create_player
@@ -16,7 +18,6 @@ class Mainmenu
         money = gets.strip.to_i
 
         @player = Player.new(name, money)
-        menu
     end
 
     def menu
@@ -40,10 +41,11 @@ class Mainmenu
         
         if menu_choice == 1
             @slots = Slotgame.new(@player)
+            menu
         elsif menu_choice == 2
             @coin_flip = Coingame.new(@player)
         elsif menu_choice == 3
-            Game 3
+            #game 3
         elsif menu_choice == 4
             puts "Thank you for playing!"
             exit

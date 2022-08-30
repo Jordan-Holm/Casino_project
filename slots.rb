@@ -4,24 +4,7 @@ class Slotgame
     def initialize(player)
         @player = player
         
-        roll_or_leave
-    end
-
-    def roll_or_leave
-        puts "would you like to.."
-        puts '1) spin wheel'
-        puts '2) return to menu'
-        answer = gets.strip.to_i
-
-        if answer == 1
-            place_bet
-        elsif answer == 2
-            #RETURN TO MENU
-        else
-            puts "invalid entry, please choose 1 or two"
-            roll_or_leave
-        end
-
+        place_bet
     end
 
     def place_bet
@@ -58,7 +41,6 @@ class Slotgame
             puts "you lost #{bet_amount}."
             puts "Total: #{player.money}"
         end
-
-        roll_or_leave
+        puts "\n"
     end 
 end
