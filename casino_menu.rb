@@ -44,6 +44,7 @@ class Mainmenu
             menu
         elsif menu_choice == 2
             @coin_flip = Coingame.new(@player)
+            menu
         elsif menu_choice == 3
             #game 3
         elsif menu_choice == 4

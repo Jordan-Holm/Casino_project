@@ -3,25 +3,8 @@ class Coingame
 
   def initialize(player)
     @player = player
-
-    coin_flip
-  end
-
-  def coin_flip
-    puts "Welcome!!! Flip away!"
-    puts '1) Flip'
-    answer = gets.strip.to_i
-
-    if answer == 1
-      place_bet
-    elsif answer == 2
-      puts "..under construction.."
-      #find out how to return to main menu
-    else
-      puts "hmm.. I didn't quite get that. Could you pick again from options 1 or 2?"
-      coin_flip
-    end
     
+    place_bet
   end
 
   def place_bet
