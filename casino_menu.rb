@@ -1,6 +1,5 @@
 require_relative 'player'
 require_relative 'slots'
-
 class Mainmenu
     attr_accessor :player
 
