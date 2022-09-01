@@ -88,7 +88,8 @@ class Blackjack
 
 end
 
-end
+menu = blackjack.new()
+
 
 
 
