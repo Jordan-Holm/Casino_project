@@ -1,7 +1,7 @@
 require_relative 'player'
 require_relative 'slots'
 require_relative 'coin_flip'
-require_relative 'black_jack'
+
 
 class Mainmenu
     attr_accessor :player
