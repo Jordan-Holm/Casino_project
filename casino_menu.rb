@@ -1,6 +1,7 @@
 require_relative 'player'
 require_relative 'slots'
 require_relative 'coin_flip'
+require_relative 'black_jack'
 
 class Mainmenu
     attr_accessor :player
@@ -35,7 +36,7 @@ class Mainmenu
         puts "Please Make a Selection"
         puts "1) Slots"
         puts "2) Coin Flip"
-        puts "3) Game 3"
+        puts "3) Black Jack"
         puts "4) Exit"
         menu_choice = gets.strip.to_i
         
@@ -46,7 +47,7 @@ class Mainmenu
             @coin_flip = Coingame.new(@player)
             menu
         elsif menu_choice == 3
-            #game 3
+            @black_jack = Blackjack.new(@player)
         elsif menu_choice == 4
             puts "Thank you for playing!"
             exit
